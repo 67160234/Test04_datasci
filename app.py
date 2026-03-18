@@ -12,7 +12,7 @@ import os
 def load_model():
     # แก้ไขชื่อไฟล์และ Path ให้ตรงกับที่คุณ Push ขึ้น GitHub เป๊ะๆ
     # ตัวเล็กตัวใหญ่ (Case-sensitive) ต้องตรงกันนะครับ
-    model_path = "model_artifacts/student_dropout_pipeline.pkl"
+    model_path = "model_artifacts/model_metadata.pkl"
     metadata_path = "model_artifacts/model_metadata.json"
 
     pipeline = joblib.load(model_path)
