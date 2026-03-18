@@ -10,17 +10,14 @@ import os
 
 @st.cache_resource
 def load_model():
-    # หาตำแหน่งปัจจุบันของไฟล์ app.py
-    current_dir = os.path.dirname(__file__)
-
-    # รวม path เข้ากับชื่อไฟล์โมเดล
-    model_path = os.path.join(current_dir, "student_dropout_pipeline.pkl")
-    metadata_path = os.path.join(current_dir, "model_metadata.json")
+    # แก้ไขชื่อไฟล์และ Path ให้ตรงกับที่คุณ Push ขึ้น GitHub เป๊ะๆ
+    # ตัวเล็กตัวใหญ่ (Case-sensitive) ต้องตรงกันนะครับ
+    model_path = "model_artifacts/student_dropout_pipeline.pkl"
+    metadata_path = "model_artifacts/model_metadata.json"
 
     pipeline = joblib.load(model_path)
     with open(metadata_path, "r", encoding="utf-8") as f:
         metadata = json.load(f)
-
     return pipeline, metadata
 
 
